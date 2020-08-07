@@ -9,7 +9,15 @@
 import Foundation
 import ObjectMapper
 
-class HeroDetailObject: Mappable {
+class HeroDetailObject: NSObject, NSCoding, Mappable {
+    required init?(coder: NSCoder) {
+        
+    }
+    
+    func encode(with coder: NSCoder) {
+        
+    }
+    
     var heroId: Int?
     
     var localizedName: String?

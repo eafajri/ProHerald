@@ -10,7 +10,6 @@ import Alamofire
 import AlamofireObjectMapper
 
 class NetworkManager {
-        
     static var shared: NetworkManager = NetworkManager()
     
     func fetchAllHeroes(onSuccess: @escaping ([HeroDetailObject]) -> Void, onError: @escaping (String) -> Void) {
