@@ -32,6 +32,8 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interactor?.fetch()
     }
     
     override func viewWillAppear(_ animated: Bool) {

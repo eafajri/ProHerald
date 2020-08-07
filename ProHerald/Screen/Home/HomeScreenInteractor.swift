@@ -14,6 +14,12 @@ class HomeScreenInteractor: HomeScreenInteractorInterface {
     var presenter: HomeScreenPresenterInterface?
             
     func fetch() {
-        
+        NetworkManager.shared.fetchAllHeroes(
+            onSuccess: { heroes in
+                print(heroes)
+            }, onError: { error in
+                
+            }
+        )
     }
 }

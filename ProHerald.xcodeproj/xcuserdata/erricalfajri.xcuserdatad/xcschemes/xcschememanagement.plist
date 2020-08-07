@@ -7,7 +7,25 @@
 		<key>ProHerald.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>CD7EF3F824DD796A00D60FCB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD7EF40E24DD796B00D60FCB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD7EF41924DD796B00D60FCB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

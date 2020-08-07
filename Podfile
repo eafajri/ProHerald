@@ -5,9 +5,11 @@ target 'ProHerald' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Alamofire'
-  pod 'SwiftyJSON'
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireObjectMapper', '~> 5.2'
+  pod 'ObjectMapper', '~> 3.5'
   pod 'Kingfisher'
+  pod 'PINCache'
 
   # Pods for ProHerald
 
