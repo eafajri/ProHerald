@@ -20,24 +20,24 @@ class HeroDetailObject: Mappable {
     var primary_attr: String?
     var attack_type: String?
     
-    var base_agi: Int?
-    var base_armor: Int?
-    var base_attack_min: Int?
-    var base_attack_max: Int?
-    var base_health: Int?
-    var base_health_regen: Float?
+    var baseAgi: Int?
+    var baseArmor: Int?
+    var baseAttackMin: Int?
+    var baseAttackMax: Int?
+    var baseHealth: Int?
+    var baseHealthRegen: Float?
     
-    var base_int: Int?
-    var base_mr: Int?
-    var base_mana: Int?
-    var base_mana_regen: Float?
-    var base_str: Int?
+    var baseInt: Int?
+    var baseMr: Int?
+    var baseMana: Int?
+    var baseManaRegen: Float?
+    var baseStr: Int?
 
-    var attack_range: Int?
-    var move_speed: Int?
-    var projectile_speed: Int?
-    var attack_rate: Float?
-    var turn_rate: Float?
+    var attackRange: Int?
+    var moveSpeed: Int?
+    var projectileSpeed: Int?
+    var attackRate: Float?
+    var turnRate: Float?
     var legs: Int?
 
     required init(map: Map) {
@@ -55,24 +55,24 @@ class HeroDetailObject: Mappable {
         self.primary_attr       <- map["primary_attr"]
         self.attack_type        <- map["attack_type"]
         
-        self.base_agi           <- map["base_agi"]
-        self.base_armor         <- map["base_armor"]
-        self.base_attack_min    <- map["base_attack_min"]
-        self.base_attack_max    <- map["base_attack_max"]
-        self.base_health        <- map["base_health"]
-        self.base_health_regen  <- map["base_health_regen"]
+        self.baseAgi           <- map["base_agi"]
+        self.baseArmor         <- map["base_armor"]
+        self.baseAttackMin    <- map["base_attack_min"]
+        self.baseAttackMax    <- map["base_attack_max"]
+        self.baseHealth        <- map["base_health"]
+        self.baseHealthRegen  <- map["base_health_regen"]
         
-        self.base_int           <- map["base_int"]
-        self.base_mr            <- map["base_mr"]
-        self.base_mana          <- map["base_mana"]
-        self.base_mana_regen    <- map["base_mana_regen"]
-        self.base_str           <- map["base_str"]
+        self.baseInt           <- map["base_int"]
+        self.baseMr            <- map["base_mr"]
+        self.baseMana          <- map["base_mana"]
+        self.baseManaRegen    <- map["base_mana_regen"]
+        self.baseStr           <- map["base_str"]
         
-        self.attack_range       <- map["attack_range"]
-        self.move_speed         <- map["move_speed"]
-        self.projectile_speed   <- map["projectile_speed"]
-        self.attack_rate        <- map["attack_rate"]
-        self.turn_rate          <- map["turn_rate"]
+        self.attackRange       <- map["attack_range"]
+        self.moveSpeed         <- map["move_speed"]
+        self.projectileSpeed   <- map["projectile_speed"]
+        self.attackRate        <- map["attack_rate"]
+        self.turnRate          <- map["turn_rate"]
         self.legs               <- map["legs"]
     }
 }
