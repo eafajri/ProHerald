@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CFF1FAA7ADEE83FA59E9D6E /* Pods_ProHeraldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */; };
+		3DCDC6DA71793BE82B8061D4 /* Pods_ProHerald.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */; };
+		442A8416970C750C990BCEBC /* Pods_ProHerald_ProHeraldUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962E17BD265CDBB71974832E /* Pods_ProHerald_ProHeraldUITests.framework */; };
 		CD7EF3FD24DD796A00D60FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF3FC24DD796A00D60FCB /* AppDelegate.swift */; };
 		CD7EF40624DD796B00D60FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD7EF40524DD796B00D60FCB /* Assets.xcassets */; };
 		CD7EF40924DD796B00D60FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7EF40724DD796B00D60FCB /* LaunchScreen.storyboard */; };
@@ -39,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36B280E2F95C64710C928083 /* Pods-ProHeraldTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHeraldTests.debug.xcconfig"; path = "Target Support Files/Pods-ProHeraldTests/Pods-ProHeraldTests.debug.xcconfig"; sourceTree = "<group>"; };
+		53BB41B2DC364B2A8104B603 /* Pods-ProHerald.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHerald.debug.xcconfig"; path = "Target Support Files/Pods-ProHerald/Pods-ProHerald.debug.xcconfig"; sourceTree = "<group>"; };
+		7CC67A5575C3AE5CB886FAE3 /* Pods-ProHeraldTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHeraldTests.release.xcconfig"; path = "Target Support Files/Pods-ProHeraldTests/Pods-ProHeraldTests.release.xcconfig"; sourceTree = "<group>"; };
+		962E17BD265CDBB71974832E /* Pods_ProHerald_ProHeraldUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHerald_ProHeraldUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7EF3F924DD796A00D60FCB /* ProHerald.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProHerald.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7EF3FC24DD796A00D60FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD7EF40524DD796B00D60FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +64,11 @@
 		CD7EF43724DD7E4500D60FCB /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
 		CD7EF43924DD7E5200D60FCB /* HomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenRouter.swift; sourceTree = "<group>"; };
 		CD7EF43C24DD7F5700D60FCB /* PopUpMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMessageView.swift; sourceTree = "<group>"; };
+		D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHerald.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHeraldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED64F8F43A8F0CDEAB79C966 /* Pods-ProHerald.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHerald.release.xcconfig"; path = "Target Support Files/Pods-ProHerald/Pods-ProHerald.release.xcconfig"; sourceTree = "<group>"; };
+		F2FBA52D9BA5BCC80A2AEEFD /* Pods-ProHerald-ProHeraldUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHerald-ProHeraldUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProHerald-ProHeraldUITests/Pods-ProHerald-ProHeraldUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F5D0E7CC1293559FBF7E9C1E /* Pods-ProHerald-ProHeraldUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHerald-ProHeraldUITests.release.xcconfig"; path = "Target Support Files/Pods-ProHerald-ProHeraldUITests/Pods-ProHerald-ProHeraldUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCDC6DA71793BE82B8061D4 /* Pods_ProHerald.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CFF1FAA7ADEE83FA59E9D6E /* Pods_ProHeraldTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442A8416970C750C990BCEBC /* Pods_ProHerald_ProHeraldUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +106,8 @@
 				CD7EF41224DD796B00D60FCB /* ProHeraldTests */,
 				CD7EF41D24DD796B00D60FCB /* ProHeraldUITests */,
 				CD7EF3FA24DD796A00D60FCB /* Products */,
+				CF19118EBD7C16A03CE262E0 /* Pods */,
+				DFC2B7B2CD5D0D9E4428E654 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,13 +124,13 @@
 		CD7EF3FB24DD796A00D60FCB /* ProHerald */ = {
 			isa = PBXGroup;
 			children = (
+				CD7EF40A24DD796B00D60FCB /* Info.plist */,
 				CD7EF3FC24DD796A00D60FCB /* AppDelegate.swift */,
 				CD7EF40524DD796B00D60FCB /* Assets.xcassets */,
-				CD7EF40724DD796B00D60FCB /* LaunchScreen.storyboard */,
-				CD7EF40A24DD796B00D60FCB /* Info.plist */,
-				CD7EF43B24DD7F5200D60FCB /* View */,
 				CD7EF43024DD7C7900D60FCB /* Core */,
+				CD7EF40724DD796B00D60FCB /* LaunchScreen.storyboard */,
 				CD7EF42C24DD7B8300D60FCB /* Screen */,
+				CD7EF43B24DD7F5200D60FCB /* View */,
 			);
 			path = ProHerald;
 			sourceTree = "<group>";
@@ -172,6 +189,29 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CF19118EBD7C16A03CE262E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53BB41B2DC364B2A8104B603 /* Pods-ProHerald.debug.xcconfig */,
+				ED64F8F43A8F0CDEAB79C966 /* Pods-ProHerald.release.xcconfig */,
+				F2FBA52D9BA5BCC80A2AEEFD /* Pods-ProHerald-ProHeraldUITests.debug.xcconfig */,
+				F5D0E7CC1293559FBF7E9C1E /* Pods-ProHerald-ProHeraldUITests.release.xcconfig */,
+				36B280E2F95C64710C928083 /* Pods-ProHeraldTests.debug.xcconfig */,
+				7CC67A5575C3AE5CB886FAE3 /* Pods-ProHeraldTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DFC2B7B2CD5D0D9E4428E654 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */,
+				962E17BD265CDBB71974832E /* Pods_ProHerald_ProHeraldUITests.framework */,
+				E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD7EF42324DD796B00D60FCB /* Build configuration list for PBXNativeTarget "ProHerald" */;
 			buildPhases = (
+				E38DFA0A60A2940658B285E5 /* [CP] Check Pods Manifest.lock */,
 				CD7EF3F524DD796A00D60FCB /* Sources */,
 				CD7EF3F624DD796A00D60FCB /* Frameworks */,
 				CD7EF3F724DD796A00D60FCB /* Resources */,
+				EA39F3675CD51D7844AEEFE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +238,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD7EF42624DD796B00D60FCB /* Build configuration list for PBXNativeTarget "ProHeraldTests" */;
 			buildPhases = (
+				256CEF817FAA6448888FDD3D /* [CP] Check Pods Manifest.lock */,
 				CD7EF40B24DD796B00D60FCB /* Sources */,
 				CD7EF40C24DD796B00D60FCB /* Frameworks */,
 				CD7EF40D24DD796B00D60FCB /* Resources */,
@@ -214,9 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD7EF42924DD796B00D60FCB /* Build configuration list for PBXNativeTarget "ProHeraldUITests" */;
 			buildPhases = (
+				0EB1CB8C332A6F0D471F9DB4 /* [CP] Check Pods Manifest.lock */,
 				CD7EF41624DD796B00D60FCB /* Sources */,
 				CD7EF41724DD796B00D60FCB /* Frameworks */,
 				CD7EF41824DD796B00D60FCB /* Resources */,
+				E8BB7DEDD6D497A6AD2733CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,6 +341,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EB1CB8C332A6F0D471F9DB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProHerald-ProHeraldUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		256CEF817FAA6448888FDD3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProHeraldTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E38DFA0A60A2940658B285E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProHerald-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8BB7DEDD6D497A6AD2733CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProHerald-ProHeraldUITests/Pods-ProHerald-ProHeraldUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProHerald-ProHeraldUITests/Pods-ProHerald-ProHeraldUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProHerald-ProHeraldUITests/Pods-ProHerald-ProHeraldUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA39F3675CD51D7844AEEFE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProHerald/Pods-ProHerald-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProHerald/Pods-ProHerald-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProHerald/Pods-ProHerald-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CD7EF3F524DD796A00D60FCB /* Sources */ = {
@@ -406,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -460,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -472,6 +620,7 @@
 		};
 		CD7EF42424DD796B00D60FCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53BB41B2DC364B2A8104B603 /* Pods-ProHerald.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -491,6 +640,7 @@
 		};
 		CD7EF42524DD796B00D60FCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED64F8F43A8F0CDEAB79C966 /* Pods-ProHerald.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -510,13 +660,13 @@
 		};
 		CD7EF42724DD796B00D60FCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36B280E2F95C64710C928083 /* Pods-ProHeraldTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H234B3HHZ5;
 				INFOPLIST_FILE = ProHeraldTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,13 +682,13 @@
 		};
 		CD7EF42824DD796B00D60FCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CC67A5575C3AE5CB886FAE3 /* Pods-ProHeraldTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H234B3HHZ5;
 				INFOPLIST_FILE = ProHeraldTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,8 +704,8 @@
 		};
 		CD7EF42A24DD796B00D60FCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2FBA52D9BA5BCC80A2AEEFD /* Pods-ProHerald-ProHeraldUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H234B3HHZ5;
 				INFOPLIST_FILE = ProHeraldUITests/Info.plist;
@@ -574,8 +724,8 @@
 		};
 		CD7EF42B24DD796B00D60FCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5D0E7CC1293559FBF7E9C1E /* Pods-ProHerald-ProHeraldUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H234B3HHZ5;
 				INFOPLIST_FILE = ProHeraldUITests/Info.plist;
