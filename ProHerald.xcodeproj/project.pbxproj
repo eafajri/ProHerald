@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CD7EF3FD24DD796A00D60FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF3FC24DD796A00D60FCB /* AppDelegate.swift */; };
-		CD7EF3FF24DD796A00D60FCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF3FE24DD796A00D60FCB /* SceneDelegate.swift */; };
-		CD7EF40124DD796A00D60FCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF40024DD796A00D60FCB /* ViewController.swift */; };
-		CD7EF40424DD796A00D60FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7EF40224DD796A00D60FCB /* Main.storyboard */; };
 		CD7EF40624DD796B00D60FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD7EF40524DD796B00D60FCB /* Assets.xcassets */; };
 		CD7EF40924DD796B00D60FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7EF40724DD796B00D60FCB /* LaunchScreen.storyboard */; };
 		CD7EF41424DD796B00D60FCB /* ProHeraldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF41324DD796B00D60FCB /* ProHeraldTests.swift */; };
 		CD7EF41F24DD796B00D60FCB /* ProHeraldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF41E24DD796B00D60FCB /* ProHeraldUITests.swift */; };
+		CD7EF42F24DD7B9F00D60FCB /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF42E24DD7B9F00D60FCB /* HomeScreenVC.swift */; };
+		CD7EF43224DD7C8000D60FCB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43124DD7C8000D60FCB /* BaseViewController.swift */; };
+		CD7EF43424DD7CD600D60FCB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43324DD7CD600D60FCB /* UIColor+Extension.swift */; };
+		CD7EF43624DD7E3E00D60FCB /* HomeScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43524DD7E3E00D60FCB /* HomeScreenInteractor.swift */; };
+		CD7EF43824DD7E4500D60FCB /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43724DD7E4500D60FCB /* HomeScreenPresenter.swift */; };
+		CD7EF43A24DD7E5200D60FCB /* HomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43924DD7E5200D60FCB /* HomeScreenRouter.swift */; };
+		CD7EF43D24DD7F5700D60FCB /* PopUpMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43C24DD7F5700D60FCB /* PopUpMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +41,6 @@
 /* Begin PBXFileReference section */
 		CD7EF3F924DD796A00D60FCB /* ProHerald.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProHerald.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7EF3FC24DD796A00D60FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD7EF3FE24DD796A00D60FCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CD7EF40024DD796A00D60FCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CD7EF40324DD796A00D60FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD7EF40524DD796B00D60FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD7EF40824DD796B00D60FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD7EF40A24DD796B00D60FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,13 @@
 		CD7EF41A24DD796B00D60FCB /* ProHeraldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProHeraldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7EF41E24DD796B00D60FCB /* ProHeraldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProHeraldUITests.swift; sourceTree = "<group>"; };
 		CD7EF42024DD796B00D60FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD7EF42E24DD7B9F00D60FCB /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
+		CD7EF43124DD7C8000D60FCB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CD7EF43324DD7CD600D60FCB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		CD7EF43524DD7E3E00D60FCB /* HomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenInteractor.swift; sourceTree = "<group>"; };
+		CD7EF43724DD7E4500D60FCB /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
+		CD7EF43924DD7E5200D60FCB /* HomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenRouter.swift; sourceTree = "<group>"; };
+		CD7EF43C24DD7F5700D60FCB /* PopUpMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +108,12 @@
 			isa = PBXGroup;
 			children = (
 				CD7EF3FC24DD796A00D60FCB /* AppDelegate.swift */,
-				CD7EF3FE24DD796A00D60FCB /* SceneDelegate.swift */,
-				CD7EF40024DD796A00D60FCB /* ViewController.swift */,
-				CD7EF40224DD796A00D60FCB /* Main.storyboard */,
 				CD7EF40524DD796B00D60FCB /* Assets.xcassets */,
 				CD7EF40724DD796B00D60FCB /* LaunchScreen.storyboard */,
 				CD7EF40A24DD796B00D60FCB /* Info.plist */,
+				CD7EF43B24DD7F5200D60FCB /* View */,
+				CD7EF43024DD7C7900D60FCB /* Core */,
+				CD7EF42C24DD7B8300D60FCB /* Screen */,
 			);
 			path = ProHerald;
 			sourceTree = "<group>";
@@ -126,6 +134,42 @@
 				CD7EF42024DD796B00D60FCB /* Info.plist */,
 			);
 			path = ProHeraldUITests;
+			sourceTree = "<group>";
+		};
+		CD7EF42C24DD7B8300D60FCB /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF42D24DD7B9300D60FCB /* Home */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		CD7EF42D24DD7B9300D60FCB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF43524DD7E3E00D60FCB /* HomeScreenInteractor.swift */,
+				CD7EF43724DD7E4500D60FCB /* HomeScreenPresenter.swift */,
+				CD7EF43924DD7E5200D60FCB /* HomeScreenRouter.swift */,
+				CD7EF42E24DD7B9F00D60FCB /* HomeScreenVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CD7EF43024DD7C7900D60FCB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF43124DD7C8000D60FCB /* BaseViewController.swift */,
+				CD7EF43324DD7CD600D60FCB /* UIColor+Extension.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CD7EF43B24DD7F5200D60FCB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF43C24DD7F5700D60FCB /* PopUpMessageView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +278,6 @@
 			files = (
 				CD7EF40924DD796B00D60FCB /* LaunchScreen.storyboard in Resources */,
 				CD7EF40624DD796B00D60FCB /* Assets.xcassets in Resources */,
-				CD7EF40424DD796A00D60FCB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7EF40124DD796A00D60FCB /* ViewController.swift in Sources */,
+				CD7EF43A24DD7E5200D60FCB /* HomeScreenRouter.swift in Sources */,
 				CD7EF3FD24DD796A00D60FCB /* AppDelegate.swift in Sources */,
-				CD7EF3FF24DD796A00D60FCB /* SceneDelegate.swift in Sources */,
+				CD7EF43824DD7E4500D60FCB /* HomeScreenPresenter.swift in Sources */,
+				CD7EF42F24DD7B9F00D60FCB /* HomeScreenVC.swift in Sources */,
+				CD7EF43624DD7E3E00D60FCB /* HomeScreenInteractor.swift in Sources */,
+				CD7EF43D24DD7F5700D60FCB /* PopUpMessageView.swift in Sources */,
+				CD7EF43224DD7C8000D60FCB /* BaseViewController.swift in Sources */,
+				CD7EF43424DD7CD600D60FCB /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +345,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CD7EF40224DD796A00D60FCB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD7EF40324DD796A00D60FCB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CD7EF40724DD796B00D60FCB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -437,6 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H234B3HHZ5;
 				INFOPLIST_FILE = ProHerald/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H234B3HHZ5;
 				INFOPLIST_FILE = ProHerald/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
