@@ -9,15 +9,29 @@
 import Foundation
 
 protocol HomeScreenInteractorInterface: class {
-    func fetch()
+    func fetchAllHeroes()
+    func proceedFilteredHeroes(allHeroes: [HeroDetailObject], roles: Set<String>)
 }
 
 class HomeScreenInteractor: HomeScreenInteractorInterface {
     var presenter: HomeScreenPresenterInterface?
             
-    func fetch() {
+    func fetchAllHeroes() {
         fetchFromLocalStorage()
         fetchFromServer()
+    }
+    
+    func proceedFilteredHeroes(allHeroes: [HeroDetailObject], roles: Set<String>) {
+        let filteredHeroes = allHeroes.filter {
+            for selectedRole in roles {
+                if !$0.roles.contains(selectedRole) {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        presenter?.onUpdateFilteredHeroes(filteredHeroes: filteredHeroes)
     }
     
     private func fetchFromLocalStorage() {

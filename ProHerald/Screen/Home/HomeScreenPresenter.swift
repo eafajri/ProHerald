@@ -8,6 +8,7 @@
 
 protocol HomeScreenPresenterInterface: class {
     func onUpdateHeroes(heroes: [HeroDetailObject])
+    func onUpdateFilteredHeroes(filteredHeroes: [HeroDetailObject])
     func onUpdateRoles(roles: [String])
     func onGetError(with message: String)
 }
@@ -16,7 +17,11 @@ class HomeScreenPresenter: HomeScreenPresenterInterface {
     var viewController: HomeScreenVC?
     
     func onUpdateHeroes(heroes: [HeroDetailObject]) {
-        viewController?.reloadCollectionView(displayedHeroes: heroes)
+        viewController?.reloadCollectionView(allHeroes: heroes)
+    }
+    
+    func onUpdateFilteredHeroes(filteredHeroes: [HeroDetailObject]) {
+        viewController?.reloadCollectionView(filteredHeroes: filteredHeroes)
     }
     
     func onUpdateRoles(roles: [String]) {

@@ -9,7 +9,8 @@
 import UIKit
 
 protocol HomeScreenVCInterface: class {
-    func reloadCollectionView(displayedHeroes: [HeroDetailObject])
+    func reloadCollectionView(allHeroes: [HeroDetailObject])
+    func reloadCollectionView(filteredHeroes: [HeroDetailObject])
     func reloadRolesTableView(displayedRoles: [String])
     func showErrorMessage(with message: String)
 }
@@ -29,7 +30,9 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     }
     
     class State {
-        var displayedHeroes: [HeroDetailObject] = []
+        var allHeroes: [HeroDetailObject] = []
+        var filteredHeroes: [HeroDetailObject] = []
+        
         var displayedRoles: [String] = []
         var selectedRolesIndex: Set = Set<String>()
     }
@@ -60,7 +63,7 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     private lazy var heroesCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = true
         collectionView.backgroundColor = .white
         collectionView.register(HeroCardCollectionViewCell.self, forCellWithReuseIdentifier: Constant.heroesCollectionCellIdentifier)
         
@@ -68,7 +71,7 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         collectionView.delegate = self
         
         let refresher: UIRefreshControl = UIRefreshControl()
-        refresher.tintColor = UIColor.red
+        refresher.tintColor = .darkGray
         refresher.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
         
         collectionView.refreshControl = refresher
@@ -95,7 +98,7 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interactor?.fetch()
+        interactor?.fetchAllHeroes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,7 +108,7 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        reloadCollectionView(displayedHeroes: screenState.displayedHeroes)
+        reloadCollectionView(allHeroes: screenState.allHeroes)
     }
     
     private func setup() {
@@ -159,9 +162,16 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     }
     
     // MARK:- Screen interface
-    func reloadCollectionView(displayedHeroes: [HeroDetailObject]) {
+    func reloadCollectionView(allHeroes: [HeroDetailObject]) {
         numberOfCulomn = calculateCollectionViewColumn()
-        screenState.displayedHeroes = displayedHeroes
+        screenState.allHeroes = allHeroes
+        heroesCollectionView.reloadData()
+        heroesCollectionView.refreshControl?.endRefreshing()
+    }
+    
+    func reloadCollectionView(filteredHeroes: [HeroDetailObject]) {
+        numberOfCulomn = calculateCollectionViewColumn()
+        screenState.filteredHeroes = filteredHeroes
         heroesCollectionView.reloadData()
         heroesCollectionView.refreshControl?.endRefreshing()
     }
@@ -180,7 +190,7 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     
     // MARK:- Tap action
     @objc func onPullToRefresh() {
-        interactor?.fetch()
+        interactor?.fetchAllHeroes()
     }
     
     func onTapHeroRole(at indexPath: IndexPath) {
@@ -193,6 +203,8 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         }
         
         rolesTableView.reloadRows(at: [indexPath], with: .fade)
+        
+        interactor?.proceedFilteredHeroes(allHeroes: screenState.allHeroes, roles: screenState.selectedRolesIndex)
     }
 }
 
@@ -242,16 +254,24 @@ extension HomeScreenVC: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeScreenVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return screenState.displayedHeroes.count
+        if !screenState.selectedRolesIndex.isEmpty {
+            return screenState.filteredHeroes.count
+        }
+        return screenState.allHeroes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var dataToDisplay = screenState.allHeroes
+        if !screenState.selectedRolesIndex.isEmpty {
+            dataToDisplay = screenState.filteredHeroes
+        }
+        
         guard let cell: HeroCardCollectionViewCell = collectionView.dequeueReusableCell(
             withReuseIdentifier: Constant.heroesCollectionCellIdentifier, for: indexPath) as? HeroCardCollectionViewCell else {
                 return UICollectionViewCell()
         }
-        cell.name = screenState.displayedHeroes[indexPath.row].localizedName
-        cell.image = screenState.displayedHeroes[indexPath.row].img
+        cell.name = dataToDisplay[indexPath.row].localizedName
+        cell.image = dataToDisplay[indexPath.row].img
         
         return cell
     }
