@@ -33,13 +33,15 @@ class MockedLocalStorageManager: LocalStorageManager, Mock {
         )
     }
     
+    var mockedHeroes: [HeroDetailObject] = []
     override func getHeroes() -> [HeroDetailObject] {
-        return callHandler.accept(
+        _ = callHandler.accept(
             nil,
             ofFunction: #function,
             atFile: #file,
             inLine: #line,
             withArgs: nil
-        ) as? [HeroDetailObject] ?? []
+        )
+        return mockedHeroes
     }
 }

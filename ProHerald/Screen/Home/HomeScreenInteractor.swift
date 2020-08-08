@@ -15,7 +15,10 @@ protocol HomeScreenInteractorInterface: class {
 
 class HomeScreenInteractor: HomeScreenInteractorInterface {
     var presenter: HomeScreenPresenterInterface?
-            
+
+    lazy var networkManager: NetworkManager  = NetworkManager.shared
+    lazy var localStorageManager: LocalStorageManager = LocalStorageManager.shared
+    
     func fetchAllHeroes() {
         fetchFromLocalStorage()
         fetchFromServer()
@@ -34,8 +37,8 @@ class HomeScreenInteractor: HomeScreenInteractorInterface {
         presenter?.onUpdateFilteredHeroes(filteredHeroes: filteredHeroes)
     }
     
-    func fetchFromLocalStorage() {
-        let heroes: [HeroDetailObject] = LocalStorageManager.shared.getHeroes()
+    private func fetchFromLocalStorage() {
+        let heroes: [HeroDetailObject] = localStorageManager.getHeroes()
         
         guard !heroes.isEmpty else { return }
         
@@ -45,13 +48,13 @@ class HomeScreenInteractor: HomeScreenInteractorInterface {
         presenter?.onUpdateRoles(roles: roles)
     }
     
-    func fetchFromServer() {
-        guard NetworkManager.shared.isConnectedToInternet() else {
+    private func fetchFromServer() {
+        guard networkManager.isConnectedToInternet() else {
             presenter?.onGetError(with: "No internet connections")
             return
         }
         
-        NetworkManager.shared.fetchAllHeroes(
+        networkManager.fetchAllHeroes(
             onSuccess: { [weak self] heroes in
                 guard let s = self else { return }
                 let roles: [String] = s.getAllHeroRoles(from: heroes)

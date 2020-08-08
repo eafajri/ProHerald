@@ -97,6 +97,59 @@ class MockedHomeScreenInteractor: HomeScreenInteractorInterface, Mock {
     }
 }
 
+class MockedHomeScreenPresenter: HomeScreenPresenterInterface, Mock {
+    var callHandler: CallHandler
+    typealias InstanceType = MockedHomeScreenPresenter
+    
+    init(testCase: XCTestCase) {
+        callHandler = CallHandlerImpl(withTestCase: testCase)
+    }
+    
+    func instanceType() -> MockedHomeScreenPresenter {
+        return self
+    }
+    
+    func onUpdateHeroes(heroes: [HeroDetailObject]) {
+        _ = callHandler.accept(
+            nil,
+            ofFunction: #function,
+            atFile: #file,
+            inLine: #line,
+            withArgs: heroes
+        )
+    }
+    
+    func onUpdateFilteredHeroes(filteredHeroes: [HeroDetailObject]) {
+        _ = callHandler.accept(
+            nil,
+            ofFunction: #function,
+            atFile: #file,
+            inLine: #line,
+            withArgs: filteredHeroes
+        )
+    }
+    
+    func onUpdateRoles(roles: [String]) {
+        _ = callHandler.accept(
+            nil,
+            ofFunction: #function,
+            atFile: #file,
+            inLine: #line,
+            withArgs: roles
+        )
+    }
+    
+    func onGetError(with message: String) {
+        _ = callHandler.accept(
+            nil,
+            ofFunction: #function,
+            atFile: #file,
+            inLine: #line,
+            withArgs: message
+        )
+    }
+}
+
 class MockedHomeScreenRouter: HomeScreenRouterInterface, Mock {
     var callHandler: CallHandler
     typealias InstanceType = MockedHomeScreenRouter

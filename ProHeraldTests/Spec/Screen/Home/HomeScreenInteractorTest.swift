@@ -6,7 +6,7 @@
 //  Copyright © 2020 proherald. All rights reserved.
 //
 
-import Fakery
+import Mockit
 import Nimble
 import Quick
 
@@ -16,27 +16,115 @@ class HomeScreenInteractorTest: QuickSpec {
     override func spec() {
         describe("HomeScreenInteractorTest") {
             var interactor: HomeScreenInteractor!
-            var presenter: HomeScreenPresenter?
+            
+            var mockedPresenter: MockedHomeScreenPresenter!
+            var mockedNetworkManager: MockedNetworkManager!
+            var mockedLocalStorageManager: MockedLocalStorageManager!
+            
+            let mockedHero: HeroDetailObject = HeroDetailObject(coder: NSKeyedUnarchiver(forReadingWith: Data()))!
             
             beforeEach {
                 interactor = HomeScreenInteractor()
-                presenter = HomeScreenPresenter()
                 
-                interactor.presenter = presenter
+                mockedPresenter = MockedHomeScreenPresenter(testCase: self)
+                mockedNetworkManager = MockedNetworkManager(testCase: self)
+                mockedLocalStorageManager = MockedLocalStorageManager(testCase: self)
+                
+                interactor.presenter = mockedPresenter
+                interactor.networkManager = mockedNetworkManager
+                interactor.localStorageManager = mockedLocalStorageManager
             }
             
             context("fetchFromLocalStorage") {
-                it("should trigger presenter when data is not empty") {
+                it("should call localStorageManager to fetch cache data") {
+                    interactor.fetchAllHeroes()
                     
+                    _ = mockedLocalStorageManager.verify(verificationMode: Once()).getHeroes()
                 }
                 
-                it("should not trigger presenter when data is empty") {
+                it("should trigger presenter for updating when data is not empty") {
+                    mockedLocalStorageManager.mockedHeroes = [mockedHero]
                     
+                    interactor.fetchAllHeroes()
+                    
+                    mockedPresenter.verify(verificationMode: Once()).onUpdateHeroes(heroes: [])
+                    mockedPresenter.verify(verificationMode: Once()).onUpdateRoles(roles: [])
+                }
+                
+                it("should not trigger presenter for updating when data is empty") {
+                    mockedLocalStorageManager.mockedHeroes = []
+                    
+                    interactor.fetchAllHeroes()
+                    
+                    mockedPresenter.verify(verificationMode: Never()).onUpdateHeroes(heroes: [])
+                    mockedPresenter.verify(verificationMode: Never()).onUpdateRoles(roles: [])
                 }
             }
             
             context("fetchFromServer") {
+                it("should check internet connection") {
+                    interactor.fetchAllHeroes()
+                    
+                    _ = mockedNetworkManager.verify(verificationMode: Once()).isConnectedToInternet()
+                }
                 
+                context("no internet access") {
+                    it("should call network manager for getting data") {
+                        _ = mockedNetworkManager.when().call(
+                            withReturnValue: mockedNetworkManager.isConnectedToInternet(),
+                            andArgumentMatching: []
+                        ).thenReturn(false)
+                        
+                        interactor.fetchAllHeroes()
+                        
+                        mockedPresenter.verify(verificationMode: Once()).onGetError(with: "")
+                    }
+                }
+                
+                context("have internet access") {
+                    beforeEach {
+                        _ = mockedNetworkManager.when().call(
+                             withReturnValue: mockedNetworkManager.isConnectedToInternet(),
+                             andArgumentMatching: []
+                         ).thenReturn(true)
+                    }
+                    
+                    it("should trigger presenter for updating data when success fetch data") {
+                        _ = mockedNetworkManager.when().call(
+                            withReturnValue: mockedNetworkManager.fetchAllHeroes(
+                                onSuccess: { _ in },
+                                onError: { _ in }
+                            ),
+                            andArgumentMatching: [Anything(), Anything()]
+                        ).thenDo { arguments in
+                            guard let onSuccess = arguments.first as? (([HeroDetailObject]) -> Void) else { return }
+                            onSuccess([])
+                        }
+
+                        interactor.fetchAllHeroes()
+
+                        mockedPresenter.verify(verificationMode: Once()).onUpdateHeroes(heroes: [])
+                        mockedPresenter.verify(verificationMode: Once()).onUpdateRoles(roles: [])
+                    }
+                    
+                    it("should trigger presenter for for getting error when error fetch data") {
+                        _ = mockedNetworkManager.when().call(
+                            withReturnValue: mockedNetworkManager.fetchAllHeroes(
+                                onSuccess: { _ in },
+                                onError: { _ in }
+                            ),
+                            andArgumentMatching: [Anything(), Anything()]
+                        ).thenDo { arguments in
+                            guard let onError = arguments.last as? ((String) -> Void) else { return }
+                            onError("")
+                        }
+
+                        interactor.fetchAllHeroes()
+
+                        mockedPresenter.verify(verificationMode: Never()).onUpdateHeroes(heroes: [])
+                        mockedPresenter.verify(verificationMode: Never()).onUpdateRoles(roles: [])
+                    }
+                }
             }
         }
     }
