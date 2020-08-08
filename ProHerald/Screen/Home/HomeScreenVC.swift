@@ -11,6 +11,7 @@ import UIKit
 protocol HomeScreenVCInterface: class {
     func reloadCollectionView(displayedHeroes: [HeroDetailObject])
     func reloadRolesTableView(displayedRoles: [String])
+    func showErrorMessage(with message: String)
 }
 
 class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
@@ -65,6 +66,12 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        let refresher: UIRefreshControl = UIRefreshControl()
+        refresher.tintColor = UIColor.red
+        refresher.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
+        
+        collectionView.refreshControl = refresher
         
         return collectionView
     }()
@@ -156,6 +163,7 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         numberOfCulomn = calculateCollectionViewColumn()
         screenState.displayedHeroes = displayedHeroes
         heroesCollectionView.reloadData()
+        heroesCollectionView.refreshControl?.endRefreshing()
     }
     
     func reloadRolesTableView(displayedRoles: [String]) {
@@ -163,7 +171,18 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         rolesTableView.reloadData()
     }
     
+    func showErrorMessage(with message: String) {
+        heroesCollectionView.refreshControl?.endRefreshing()
+        rolesTableView.reloadData()
+        
+        showToast(message: message)
+    }
+    
     // MARK:- Tap action
+    @objc func onPullToRefresh() {
+        interactor?.fetch()
+    }
+    
     func onTapHeroRole(at indexPath: IndexPath) {
         let role = screenState.displayedRoles[indexPath.row]
         

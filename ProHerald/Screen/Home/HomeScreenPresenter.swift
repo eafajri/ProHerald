@@ -24,6 +24,6 @@ class HomeScreenPresenter: HomeScreenPresenterInterface {
     }
     
     func onGetError(with message: String) {
-        PopUpMessageView.shared.showAlert(message: message)
+        viewController?.showErrorMessage(with: message)
     }
 }

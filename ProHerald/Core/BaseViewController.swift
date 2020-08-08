@@ -33,4 +33,29 @@ class BaseViewController: UIViewController {
         
         navigationController?.navigationBar.isTranslucent = false
     }
+    
+    func showToast(message: String) {
+        
+        let toastLabel = UILabel(frame: CGRect(
+            x: 0,
+            y: self.view.frame.size.height-30,
+            width: self.view.frame.size.width,
+            height: 30)
+        )
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.clipsToBounds  =  true
+        
+        self.view.addSubview(toastLabel)
+        
+        UIView.animate(withDuration: 0.5, delay: 3, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
 }
