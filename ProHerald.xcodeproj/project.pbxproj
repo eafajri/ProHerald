@@ -27,7 +27,6 @@
 		CD7EF45324DDCB8500D60FCB /* RoleCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45224DDCB8500D60FCB /* RoleCardTableViewCell.swift */; };
 		CD7EF45624DEA4E900D60FCB /* HeroDetailScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45524DEA4E900D60FCB /* HeroDetailScreenVC.swift */; };
 		CD7EF45824DEA4F500D60FCB /* HeroDetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45724DEA4F500D60FCB /* HeroDetailScreenInteractor.swift */; };
-		CD7EF45A24DEA50000D60FCB /* HeroDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45924DEA50000D60FCB /* HeroDetailScreenRouter.swift */; };
 		CD7EF45C24DEA50900D60FCB /* HeroDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45B24DEA50900D60FCB /* HeroDetailScreenPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +75,6 @@
 		CD7EF45224DDCB8500D60FCB /* RoleCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCardTableViewCell.swift; sourceTree = "<group>"; };
 		CD7EF45524DEA4E900D60FCB /* HeroDetailScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenVC.swift; sourceTree = "<group>"; };
 		CD7EF45724DEA4F500D60FCB /* HeroDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenInteractor.swift; sourceTree = "<group>"; };
-		CD7EF45924DEA50000D60FCB /* HeroDetailScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenRouter.swift; sourceTree = "<group>"; };
 		CD7EF45B24DEA50900D60FCB /* HeroDetailScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenPresenter.swift; sourceTree = "<group>"; };
 		D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHerald.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHeraldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +142,6 @@
 				CD7EF40724DD796B00D60FCB /* LaunchScreen.storyboard */,
 				CD7EF43024DD7C7900D60FCB /* Core */,
 				CD7EF42C24DD7B8300D60FCB /* Screen */,
-				CD7EF43B24DD7F5200D60FCB /* View */,
 				CD7EF44B24DD9C1100D60FCB /* Worker */,
 			);
 			path = ProHerald;
@@ -197,13 +194,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		CD7EF43B24DD7F5200D60FCB /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		CD7EF44B24DD9C1100D60FCB /* Worker */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +226,6 @@
 			children = (
 				CD7EF45724DEA4F500D60FCB /* HeroDetailScreenInteractor.swift */,
 				CD7EF45B24DEA50900D60FCB /* HeroDetailScreenPresenter.swift */,
-				CD7EF45924DEA50000D60FCB /* HeroDetailScreenRouter.swift */,
 				CD7EF45524DEA4E900D60FCB /* HeroDetailScreenVC.swift */,
 			);
 			path = HeroDetail;
@@ -506,7 +495,6 @@
 				CD7EF44824DD8B2800D60FCB /* NetworkManager.swift in Sources */,
 				CD7EF43A24DD7E5200D60FCB /* HomeScreenRouter.swift in Sources */,
 				CD7EF44E24DDB8C200D60FCB /* LocalStorageManager.swift in Sources */,
-				CD7EF45A24DEA50000D60FCB /* HeroDetailScreenRouter.swift in Sources */,
 				CD7EF3FD24DD796A00D60FCB /* AppDelegate.swift in Sources */,
 				CD7EF43824DD7E4500D60FCB /* HomeScreenPresenter.swift in Sources */,
 				CD7EF45C24DEA50900D60FCB /* HeroDetailScreenPresenter.swift in Sources */,

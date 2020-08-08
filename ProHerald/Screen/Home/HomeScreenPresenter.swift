@@ -14,7 +14,7 @@ protocol HomeScreenPresenterInterface: class {
 }
 
 class HomeScreenPresenter: HomeScreenPresenterInterface {
-    var viewController: HomeScreenVC?
+    var viewController: HomeScreenVCInterface?
     
     func onUpdateHeroes(heroes: [HeroDetailObject]) {
         viewController?.reloadCollectionView(allHeroes: heroes)

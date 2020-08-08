@@ -63,6 +63,9 @@ class HeroCardCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
         contentView.clipsToBounds = true
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTapCard))
+        contentView.addGestureRecognizer(tap)
+        
         NSLayoutConstraint.activate([
             heroImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             heroImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
@@ -75,5 +78,10 @@ class HeroCardCollectionViewCell: UICollectionViewCell {
             nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor)
         ])
+    }
+    
+    var tapCard: (() -> Void)?
+    @objc private func onTapCard() {
+        tapCard?()
     }
 }

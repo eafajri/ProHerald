@@ -206,6 +206,11 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         
         interactor?.proceedFilteredHeroes(allHeroes: screenState.allHeroes, roles: screenState.selectedRolesIndex)
     }
+    
+    func onTapHeroCard(selectedHero: HeroDetailObject) {
+        showErrorMessage(with: "wkwkw")
+        router?.routeToHeroDetailScreen(selectedHero: selectedHero, allHeroes: screenState.allHeroes)
+    }
 }
 
 // MARK:- table view delegate and datasource
@@ -272,7 +277,9 @@ extension HomeScreenVC: UICollectionViewDataSource, UICollectionViewDelegate, UI
         }
         cell.name = dataToDisplay[indexPath.row].localizedName
         cell.image = dataToDisplay[indexPath.row].img
-        
+        cell.tapCard = { [weak self] in
+            self?.onTapHeroCard(selectedHero: dataToDisplay[indexPath.row])
+        }
         return cell
     }
     

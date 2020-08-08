@@ -9,13 +9,18 @@
 import UIKit
 
 protocol HomeScreenRouterInterface {
-    func routeToHeroDetailScreen()
+    func routeToHeroDetailScreen(selectedHero: HeroDetailObject, allHeroes: [HeroDetailObject])
 }
 
 class HomeScreenRouter: HomeScreenRouterInterface {
     weak var viewController: HomeScreenVC?
     
-    func routeToHeroDetailScreen() {
+    func routeToHeroDetailScreen(selectedHero: HeroDetailObject, allHeroes: [HeroDetailObject]) {
         
+        let detailVC = HeroDetailScreenVC()
+        detailVC.screenState.heroDetail = selectedHero
+        detailVC.screenState.allHeros = allHeroes
+        
+        viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

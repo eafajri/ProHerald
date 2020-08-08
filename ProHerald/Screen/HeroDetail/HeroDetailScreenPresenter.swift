@@ -6,4 +6,14 @@
 //  Copyright © 2020 proherald. All rights reserved.
 //
 
-import Foundation
+protocol HeroDetailScreenPresenterInterface: class {
+    func onUpdateRelatedHeroes(heroes: [HeroDetailObject])
+}
+
+class HeroDetailScreenPresenter: HeroDetailScreenPresenterInterface {
+    var viewController: HeroDetailScreenVCInterface?
+    
+    func onUpdateRelatedHeroes(heroes: [HeroDetailObject]) {
+        viewController?.reloadTableView(relatedHeroes: heroes)
+    }
+}
