@@ -17,7 +17,6 @@
 		CD7EF41F24DD796B00D60FCB /* ProHeraldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF41E24DD796B00D60FCB /* ProHeraldUITests.swift */; };
 		CD7EF42F24DD7B9F00D60FCB /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF42E24DD7B9F00D60FCB /* HomeScreenVC.swift */; };
 		CD7EF43224DD7C8000D60FCB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43124DD7C8000D60FCB /* BaseViewController.swift */; };
-		CD7EF43424DD7CD600D60FCB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43324DD7CD600D60FCB /* UIColor+Extension.swift */; };
 		CD7EF43624DD7E3E00D60FCB /* HomeScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43524DD7E3E00D60FCB /* HomeScreenInteractor.swift */; };
 		CD7EF43824DD7E4500D60FCB /* HomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43724DD7E4500D60FCB /* HomeScreenPresenter.swift */; };
 		CD7EF43A24DD7E5200D60FCB /* HomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43924DD7E5200D60FCB /* HomeScreenRouter.swift */; };
@@ -25,6 +24,8 @@
 		CD7EF44824DD8B2800D60FCB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF44724DD8B2800D60FCB /* NetworkManager.swift */; };
 		CD7EF44A24DD9BD900D60FCB /* HeroDetailObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF44924DD9BD900D60FCB /* HeroDetailObject.swift */; };
 		CD7EF44E24DDB8C200D60FCB /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF44D24DDB8C200D60FCB /* LocalStorageManager.swift */; };
+		CD7EF45124DDCB5800D60FCB /* HeroCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45024DDCB5800D60FCB /* HeroCardCollectionViewCell.swift */; };
+		CD7EF45324DDCB8500D60FCB /* RoleCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45224DDCB8500D60FCB /* RoleCardTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,6 @@
 		CD7EF42024DD796B00D60FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD7EF42E24DD7B9F00D60FCB /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		CD7EF43124DD7C8000D60FCB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		CD7EF43324DD7CD600D60FCB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CD7EF43524DD7E3E00D60FCB /* HomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenInteractor.swift; sourceTree = "<group>"; };
 		CD7EF43724DD7E4500D60FCB /* HomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenter.swift; sourceTree = "<group>"; };
 		CD7EF43924DD7E5200D60FCB /* HomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenRouter.swift; sourceTree = "<group>"; };
@@ -70,6 +70,8 @@
 		CD7EF44724DD8B2800D60FCB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CD7EF44924DD9BD900D60FCB /* HeroDetailObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailObject.swift; sourceTree = "<group>"; };
 		CD7EF44D24DDB8C200D60FCB /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		CD7EF45024DDCB5800D60FCB /* HeroCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD7EF45224DDCB8500D60FCB /* RoleCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCardTableViewCell.swift; sourceTree = "<group>"; };
 		D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHerald.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHeraldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED64F8F43A8F0CDEAB79C966 /* Pods-ProHerald.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHerald.release.xcconfig"; path = "Target Support Files/Pods-ProHerald/Pods-ProHerald.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				CD7EF43724DD7E4500D60FCB /* HomeScreenPresenter.swift */,
 				CD7EF43924DD7E5200D60FCB /* HomeScreenRouter.swift */,
 				CD7EF42E24DD7B9F00D60FCB /* HomeScreenVC.swift */,
+				CD7EF44F24DDCB4200D60FCB /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -183,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				CD7EF43124DD7C8000D60FCB /* BaseViewController.swift */,
-				CD7EF43324DD7CD600D60FCB /* UIColor+Extension.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -212,6 +214,15 @@
 				CD7EF44924DD9BD900D60FCB /* HeroDetailObject.swift */,
 			);
 			path = Object;
+			sourceTree = "<group>";
+		};
+		CD7EF44F24DDCB4200D60FCB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF45024DDCB5800D60FCB /* HeroCardCollectionViewCell.swift */,
+				CD7EF45224DDCB8500D60FCB /* RoleCardTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CF19118EBD7C16A03CE262E0 /* Pods */ = {
@@ -482,10 +493,11 @@
 				CD7EF43824DD7E4500D60FCB /* HomeScreenPresenter.swift in Sources */,
 				CD7EF42F24DD7B9F00D60FCB /* HomeScreenVC.swift in Sources */,
 				CD7EF43624DD7E3E00D60FCB /* HomeScreenInteractor.swift in Sources */,
+				CD7EF45124DDCB5800D60FCB /* HeroCardCollectionViewCell.swift in Sources */,
 				CD7EF43D24DD7F5700D60FCB /* PopUpMessageView.swift in Sources */,
+				CD7EF45324DDCB8500D60FCB /* RoleCardTableViewCell.swift in Sources */,
 				CD7EF44A24DD9BD900D60FCB /* HeroDetailObject.swift in Sources */,
 				CD7EF43224DD7C8000D60FCB /* BaseViewController.swift in Sources */,
-				CD7EF43424DD7CD600D60FCB /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

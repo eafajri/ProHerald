@@ -10,14 +10,6 @@ import Foundation
 import ObjectMapper
 
 class HeroDetailObject: NSObject, NSCoding, Mappable {
-    required init?(coder: NSCoder) {
-        
-    }
-    
-    func encode(with coder: NSCoder) {
-        
-    }
-    
     var heroId: Int?
     
     var localizedName: String?
@@ -40,18 +32,38 @@ class HeroDetailObject: NSObject, NSCoding, Mappable {
     var baseMana: Int?
     var baseManaRegen: Float?
     var baseStr: Int?
-
+    
     var attackRange: Int?
     var moveSpeed: Int?
     var projectileSpeed: Int?
     var attackRate: Float?
     var turnRate: Float?
     var legs: Int?
-
-    required init(map: Map) {
-        
+    
+    required init(map: Map) { }
+    
+    required init?(coder: NSCoder) {
+        self.heroId = coder.decodeObject(forKey: "hero_id") as? Int
+        self.localizedName = coder.decodeObject(forKey: "localized_name") as? String
+        self.name = coder.decodeObject(forKey: "name") as? String
+        self.icon = coder.decodeObject(forKey: "icon") as? String
+        self.img = coder.decodeObject(forKey: "img") as? String
+        self.roles = coder.decodeObject(forKey: "roles") as? [String] ?? []
+        self.primary_attr = coder.decodeObject(forKey: "primary_attr") as? String
+        self.attack_type = coder.decodeObject(forKey: "attack_type") as? String
     }
-
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(self.heroId, forKey: "hero_id")
+        coder.encode(self.localizedName, forKey: "localized_name")
+        coder.encode(self.name, forKey: "name")
+        coder.encode(self.icon, forKey: "icon")
+        coder.encode(self.img, forKey: "img")
+        coder.encode(self.roles, forKey: "roles")
+        coder.encode(self.primary_attr, forKey: "primary_attr")
+        coder.encode(self.attack_type, forKey: "attack_type")
+    }
+    
     func mapping(map: Map) {
         self.heroId             <- map["hero_id"]
         

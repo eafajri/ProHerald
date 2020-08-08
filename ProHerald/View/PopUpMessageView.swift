@@ -13,7 +13,7 @@ class PopUpMessageView: NSObject {
 
     private override init() { }
     
-    func showAlert(title: String = "", message: String, duration: TimeInterval = 1) {
+    func showAlert(title: String = "", message: String, duration: TimeInterval = 2) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)

@@ -9,6 +9,8 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    var device: UIDevice = UIDevice.current
+    
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .none
     }
@@ -23,7 +25,7 @@ class BaseViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        view.backgroundColor = .theBackground()
+        view.backgroundColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {

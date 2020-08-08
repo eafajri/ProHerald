@@ -7,13 +7,23 @@
 //
 
 protocol HomeScreenPresenterInterface: class {
-    func reloadView()
+    func onUpdateHeroes(heroes: [HeroDetailObject])
+    func onUpdateRoles(roles: [String])
+    func onGetError(with message: String)
 }
 
 class HomeScreenPresenter: HomeScreenPresenterInterface {
     var viewController: HomeScreenVC?
     
-    func reloadView() {
-
+    func onUpdateHeroes(heroes: [HeroDetailObject]) {
+        
+    }
+    
+    func onUpdateRoles(roles: [String]) {
+        viewController?.reloadRolesTableView(displayedRoles: roles)
+    }
+    
+    func onGetError(with message: String) {
+        PopUpMessageView.shared.showAlert(message: message)
     }
 }
