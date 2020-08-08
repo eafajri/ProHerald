@@ -25,6 +25,10 @@
 		CD7EF44E24DDB8C200D60FCB /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF44D24DDB8C200D60FCB /* LocalStorageManager.swift */; };
 		CD7EF45124DDCB5800D60FCB /* HeroCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45024DDCB5800D60FCB /* HeroCardCollectionViewCell.swift */; };
 		CD7EF45324DDCB8500D60FCB /* RoleCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45224DDCB8500D60FCB /* RoleCardTableViewCell.swift */; };
+		CD7EF45624DEA4E900D60FCB /* HeroDetailScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45524DEA4E900D60FCB /* HeroDetailScreenVC.swift */; };
+		CD7EF45824DEA4F500D60FCB /* HeroDetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45724DEA4F500D60FCB /* HeroDetailScreenInteractor.swift */; };
+		CD7EF45A24DEA50000D60FCB /* HeroDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45924DEA50000D60FCB /* HeroDetailScreenRouter.swift */; };
+		CD7EF45C24DEA50900D60FCB /* HeroDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45B24DEA50900D60FCB /* HeroDetailScreenPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		CD7EF44D24DDB8C200D60FCB /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		CD7EF45024DDCB5800D60FCB /* HeroCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD7EF45224DDCB8500D60FCB /* RoleCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCardTableViewCell.swift; sourceTree = "<group>"; };
+		CD7EF45524DEA4E900D60FCB /* HeroDetailScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenVC.swift; sourceTree = "<group>"; };
+		CD7EF45724DEA4F500D60FCB /* HeroDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenInteractor.swift; sourceTree = "<group>"; };
+		CD7EF45924DEA50000D60FCB /* HeroDetailScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenRouter.swift; sourceTree = "<group>"; };
+		CD7EF45B24DEA50900D60FCB /* HeroDetailScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenPresenter.swift; sourceTree = "<group>"; };
 		D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHerald.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHeraldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED64F8F43A8F0CDEAB79C966 /* Pods-ProHerald.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHerald.release.xcconfig"; path = "Target Support Files/Pods-ProHerald/Pods-ProHerald.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				CD7EF42D24DD7B9300D60FCB /* Home */,
+				CD7EF45424DEA4CC00D60FCB /* HeroDetail */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -220,6 +229,17 @@
 				CD7EF45224DDCB8500D60FCB /* RoleCardTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CD7EF45424DEA4CC00D60FCB /* HeroDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF45724DEA4F500D60FCB /* HeroDetailScreenInteractor.swift */,
+				CD7EF45B24DEA50900D60FCB /* HeroDetailScreenPresenter.swift */,
+				CD7EF45924DEA50000D60FCB /* HeroDetailScreenRouter.swift */,
+				CD7EF45524DEA4E900D60FCB /* HeroDetailScreenVC.swift */,
+			);
+			path = HeroDetail;
 			sourceTree = "<group>";
 		};
 		CF19118EBD7C16A03CE262E0 /* Pods */ = {
@@ -486,14 +506,18 @@
 				CD7EF44824DD8B2800D60FCB /* NetworkManager.swift in Sources */,
 				CD7EF43A24DD7E5200D60FCB /* HomeScreenRouter.swift in Sources */,
 				CD7EF44E24DDB8C200D60FCB /* LocalStorageManager.swift in Sources */,
+				CD7EF45A24DEA50000D60FCB /* HeroDetailScreenRouter.swift in Sources */,
 				CD7EF3FD24DD796A00D60FCB /* AppDelegate.swift in Sources */,
 				CD7EF43824DD7E4500D60FCB /* HomeScreenPresenter.swift in Sources */,
+				CD7EF45C24DEA50900D60FCB /* HeroDetailScreenPresenter.swift in Sources */,
 				CD7EF42F24DD7B9F00D60FCB /* HomeScreenVC.swift in Sources */,
 				CD7EF43624DD7E3E00D60FCB /* HomeScreenInteractor.swift in Sources */,
 				CD7EF45124DDCB5800D60FCB /* HeroCardCollectionViewCell.swift in Sources */,
 				CD7EF45324DDCB8500D60FCB /* RoleCardTableViewCell.swift in Sources */,
+				CD7EF45624DEA4E900D60FCB /* HeroDetailScreenVC.swift in Sources */,
 				CD7EF44A24DD9BD900D60FCB /* HeroDetailObject.swift in Sources */,
 				CD7EF43224DD7C8000D60FCB /* BaseViewController.swift in Sources */,
+				CD7EF45824DEA4F500D60FCB /* HeroDetailScreenInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
