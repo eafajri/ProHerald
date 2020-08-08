@@ -11,7 +11,7 @@ import UIKit
 class RoleCardTableViewCell: UITableViewCell {
     
     private enum Constant {
-        static let margin = UIEdgeInsets(top: 2, left: 8, bottom: 2, right: 8)
+        static let margin = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
         static let buttonHeight: CGFloat = 24
     }
     

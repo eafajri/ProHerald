@@ -16,7 +16,7 @@ class HomeScreenPresenter: HomeScreenPresenterInterface {
     var viewController: HomeScreenVC?
     
     func onUpdateHeroes(heroes: [HeroDetailObject]) {
-        
+        viewController?.reloadCollectionView(displayedHeroes: heroes)
     }
     
     func onUpdateRoles(roles: [String]) {

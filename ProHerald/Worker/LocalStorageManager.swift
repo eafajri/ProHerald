@@ -17,7 +17,6 @@ class LocalStorageManager {
     static var shared: LocalStorageManager = LocalStorageManager()
     
     func saveHeroes(with heroes: [HeroDetailObject]) {
-        let a = heroes as NSArray
         PINCache.shared().setObject((heroes as NSArray), forKey: LocalStorageKey.allOfHeroes.rawValue)
     }
     

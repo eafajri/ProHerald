@@ -9,22 +9,31 @@
 import UIKit
 
 protocol HomeScreenVCInterface: class {
-    func reloadCollectionView()
+    func reloadCollectionView(displayedHeroes: [HeroDetailObject])
     func reloadRolesTableView(displayedRoles: [String])
 }
 
 class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
+    private enum Constant {
+        static let title: String = "ProHerald - Dota2 Heroes"
+        
+        static let rolesTableCellIdentifier: String = "RoleCardTableViewCell"
+        static let rolesTableCellHeaderTitle: String = "Select Role"
+        static let rolesTableHeaderHeight: CGFloat = 36
+        static let rolesTableViewWidth: CGFloat = 92
+        
+        static let heroesCollectionCellIdentifier: String = "HeroCardCollectionViewCell"
+        static let heroesCollectionCellSizeRatio: CGFloat = 3 / 5 // height : width = 3 : 5
+        static let heroesCollectionCellInset: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    }
+    
     class State {
         var displayedHeroes: [HeroDetailObject] = []
         var displayedRoles: [String] = []
         var selectedRolesIndex: Set = Set<String>()
     }
     
-    var screenState = State()
-    
-    private enum Constant {
-        static let rolesTableViewWidth: CGFloat = 92
-    }
+    private var screenState = State()
     
     private var interactor: HomeScreenInteractorInterface?
     private var router: HomeScreenRouter?
@@ -38,11 +47,26 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = .groupTableViewBackground
-        tableView.estimatedRowHeight = 36
         
-        tableView.register(RoleCardTableViewCell.self, forCellReuseIdentifier: "RoleCardTableViewCell")
+        tableView.register(RoleCardTableViewCell.self, forCellReuseIdentifier: Constant.rolesTableCellIdentifier)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         return tableView
+    }()
+    
+    private lazy var heroesCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = .white
+        collectionView.register(HeroCardCollectionViewCell.self, forCellWithReuseIdentifier: Constant.heroesCollectionCellIdentifier)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        return collectionView
     }()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?){
@@ -74,14 +98,14 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        numberOfCulomn = calculateCollectionViewColumn()
+        reloadCollectionView(displayedHeroes: screenState.displayedHeroes)
     }
     
     private func setup() {
         let viewController = self
-        let interactor = HomeScreenInteractor()
-        let presenter = HomeScreenPresenter()
-        let router = HomeScreenRouter()
+        let interactor: HomeScreenInteractor = HomeScreenInteractor()
+        let presenter: HomeScreenPresenter = HomeScreenPresenter()
+        let router: HomeScreenRouter = HomeScreenRouter()
         
         viewController.interactor = interactor
         viewController.router = router
@@ -91,12 +115,10 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     }
     
     private func initView() {
-        title = "ProHerald - Dota2 Heroes"
+        title = Constant.title
         
         view.addSubview(rolesTableView)
-        
-        rolesTableView.dataSource = self
-        rolesTableView.delegate = self
+        view.addSubview(heroesCollectionView)
         
         NSLayoutConstraint.activate([
             rolesTableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -104,27 +126,36 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
             rolesTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             rolesTableView.widthAnchor.constraint(equalToConstant: Constant.rolesTableViewWidth)
         ])
+        
+        NSLayoutConstraint.activate([
+            heroesCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            heroesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            heroesCollectionView.leftAnchor.constraint(equalTo: rolesTableView.rightAnchor),
+            heroesCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
     }
     
     private func calculateCollectionViewColumn() -> Int {
         if UIDevice.current.userInterfaceIdiom == .phone {
             if UIDevice.current.orientation.isLandscape {
-                return 3
+                return 4
             } else {
-                return 1
+                return 2
             }
         } else {
             if UIDevice.current.orientation.isLandscape {
-                return 4
+                return 6
             } else {
-                return 3
+                return 4
             }
         }
     }
     
     // MARK:- Screen interface
-    func reloadCollectionView() {
-        
+    func reloadCollectionView(displayedHeroes: [HeroDetailObject]) {
+        numberOfCulomn = calculateCollectionViewColumn()
+        screenState.displayedHeroes = displayedHeroes
+        heroesCollectionView.reloadData()
     }
     
     func reloadRolesTableView(displayedRoles: [String]) {
@@ -146,6 +177,7 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     }
 }
 
+// MARK:- table view delegate and datasource
 extension HomeScreenVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return screenState.displayedRoles.count
@@ -156,7 +188,7 @@ extension HomeScreenVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RoleCardTableViewCell", for: indexPath) as? RoleCardTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.rolesTableCellIdentifier, for: indexPath) as? RoleCardTableViewCell else {
             return UITableViewCell()
         }
         
@@ -172,19 +204,50 @@ extension HomeScreenVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard section == 0 else { return nil }
         
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 36))
-        label.text = "Select role"
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: Constant.rolesTableHeaderHeight))
+        label.text = Constant.rolesTableCellHeaderTitle
+        label.font = UIFont.preferredFont(forTextStyle: .callout)
         label.textColor = .darkText
         label.textAlignment = .center
         label.backgroundColor = .groupTableViewBackground
-
+        
         return label
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard section == 0 else { return 0 }
         
-        return 36
+        return Constant.rolesTableHeaderHeight
+    }
+}
+
+extension HomeScreenVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return screenState.displayedHeroes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell: HeroCardCollectionViewCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: Constant.heroesCollectionCellIdentifier, for: indexPath) as? HeroCardCollectionViewCell else {
+                return UICollectionViewCell()
+        }
+        cell.name = screenState.displayedHeroes[indexPath.row].localizedName
+        cell.image = screenState.displayedHeroes[indexPath.row].img
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (self.view.frame.width - Constant.rolesTableViewWidth) / CGFloat(numberOfCulomn)
+            - Constant.heroesCollectionCellInset.left
+            - Constant.heroesCollectionCellInset.right
+        
+        let height = Constant.heroesCollectionCellSizeRatio * width
+        
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return Constant.heroesCollectionCellInset
     }
 }

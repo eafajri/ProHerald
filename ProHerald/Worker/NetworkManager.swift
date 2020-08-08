@@ -12,12 +12,14 @@ import AlamofireObjectMapper
 class NetworkManager {
     static var shared: NetworkManager = NetworkManager()
     
+    let baseUrl: String = "https://api.opendota.com"
+    
     func isConnectedToInternet() -> Bool {
         return NetworkReachabilityManager()?.isReachable ?? false
     }
     
     func fetchAllHeroes(onSuccess: @escaping ([HeroDetailObject]) -> Void, onError: @escaping (String) -> Void) {
-        let url: String = "https://api.opendota.com/api/herostats"
+        let url: String = "\(baseUrl)/api/herostats"
         
         let request: DataRequest = Alamofire.request(url)
         request.responseArray { (response: DataResponse<[HeroDetailObject]>) in
