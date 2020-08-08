@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		0CFF1FAA7ADEE83FA59E9D6E /* Pods_ProHeraldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */; };
 		3DCDC6DA71793BE82B8061D4 /* Pods_ProHerald.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */; };
-		442A8416970C750C990BCEBC /* Pods_ProHerald_ProHeraldUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962E17BD265CDBB71974832E /* Pods_ProHerald_ProHeraldUITests.framework */; };
 		CD7EF3FD24DD796A00D60FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF3FC24DD796A00D60FCB /* AppDelegate.swift */; };
 		CD7EF40624DD796B00D60FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD7EF40524DD796B00D60FCB /* Assets.xcassets */; };
 		CD7EF40924DD796B00D60FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7EF40724DD796B00D60FCB /* LaunchScreen.storyboard */; };
-		CD7EF41424DD796B00D60FCB /* ProHeraldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF41324DD796B00D60FCB /* ProHeraldTests.swift */; };
-		CD7EF41F24DD796B00D60FCB /* ProHeraldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF41E24DD796B00D60FCB /* ProHeraldUITests.swift */; };
 		CD7EF42F24DD7B9F00D60FCB /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF42E24DD7B9F00D60FCB /* HomeScreenVC.swift */; };
 		CD7EF43224DD7C8000D60FCB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43124DD7C8000D60FCB /* BaseViewController.swift */; };
 		CD7EF43624DD7E3E00D60FCB /* HomeScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF43524DD7E3E00D60FCB /* HomeScreenInteractor.swift */; };
@@ -28,17 +25,13 @@
 		CD7EF45624DEA4E900D60FCB /* HeroDetailScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45524DEA4E900D60FCB /* HeroDetailScreenVC.swift */; };
 		CD7EF45824DEA4F500D60FCB /* HeroDetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45724DEA4F500D60FCB /* HeroDetailScreenInteractor.swift */; };
 		CD7EF45C24DEA50900D60FCB /* HeroDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45B24DEA50900D60FCB /* HeroDetailScreenPresenter.swift */; };
+		CD7EF45E24DED04E00D60FCB /* HomeScreenInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF45D24DED04E00D60FCB /* HomeScreenInteractorTest.swift */; };
+		CD7EF46624DED2E800D60FCB /* MockedNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF46524DED2E800D60FCB /* MockedNetworkManager.swift */; };
+		CD7EF46824DED2F900D60FCB /* MockedLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF46724DED2F900D60FCB /* MockedLocalStorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		CD7EF41024DD796B00D60FCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD7EF3F124DD796A00D60FCB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD7EF3F824DD796A00D60FCB;
-			remoteInfo = ProHerald;
-		};
-		CD7EF41B24DD796B00D60FCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD7EF3F124DD796A00D60FCB /* Project object */;
 			proxyType = 1;
@@ -58,11 +51,7 @@
 		CD7EF40824DD796B00D60FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD7EF40A24DD796B00D60FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD7EF40F24DD796B00D60FCB /* ProHeraldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProHeraldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD7EF41324DD796B00D60FCB /* ProHeraldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProHeraldTests.swift; sourceTree = "<group>"; };
 		CD7EF41524DD796B00D60FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD7EF41A24DD796B00D60FCB /* ProHeraldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProHeraldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD7EF41E24DD796B00D60FCB /* ProHeraldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProHeraldUITests.swift; sourceTree = "<group>"; };
-		CD7EF42024DD796B00D60FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD7EF42E24DD7B9F00D60FCB /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		CD7EF43124DD7C8000D60FCB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CD7EF43524DD7E3E00D60FCB /* HomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenInteractor.swift; sourceTree = "<group>"; };
@@ -76,6 +65,9 @@
 		CD7EF45524DEA4E900D60FCB /* HeroDetailScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenVC.swift; sourceTree = "<group>"; };
 		CD7EF45724DEA4F500D60FCB /* HeroDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenInteractor.swift; sourceTree = "<group>"; };
 		CD7EF45B24DEA50900D60FCB /* HeroDetailScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailScreenPresenter.swift; sourceTree = "<group>"; };
+		CD7EF45D24DED04E00D60FCB /* HomeScreenInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenInteractorTest.swift; sourceTree = "<group>"; };
+		CD7EF46524DED2E800D60FCB /* MockedNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkManager.swift; sourceTree = "<group>"; };
+		CD7EF46724DED2F900D60FCB /* MockedLocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedLocalStorageManager.swift; sourceTree = "<group>"; };
 		D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHerald.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHeraldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED64F8F43A8F0CDEAB79C966 /* Pods-ProHerald.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHerald.release.xcconfig"; path = "Target Support Files/Pods-ProHerald/Pods-ProHerald.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,14 +92,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD7EF41724DD796B00D60FCB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				442A8416970C750C990BCEBC /* Pods_ProHerald_ProHeraldUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,7 +100,6 @@
 			children = (
 				CD7EF3FB24DD796A00D60FCB /* ProHerald */,
 				CD7EF41224DD796B00D60FCB /* ProHeraldTests */,
-				CD7EF41D24DD796B00D60FCB /* ProHeraldUITests */,
 				CD7EF3FA24DD796A00D60FCB /* Products */,
 				CF19118EBD7C16A03CE262E0 /* Pods */,
 				DFC2B7B2CD5D0D9E4428E654 /* Frameworks */,
@@ -128,7 +111,6 @@
 			children = (
 				CD7EF3F924DD796A00D60FCB /* ProHerald.app */,
 				CD7EF40F24DD796B00D60FCB /* ProHeraldTests.xctest */,
-				CD7EF41A24DD796B00D60FCB /* ProHeraldUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,19 +132,11 @@
 		CD7EF41224DD796B00D60FCB /* ProHeraldTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD7EF41324DD796B00D60FCB /* ProHeraldTests.swift */,
 				CD7EF41524DD796B00D60FCB /* Info.plist */,
+				CD7EF45F24DED25B00D60FCB /* Mock */,
+				CD7EF46324DED2B600D60FCB /* Spec */,
 			);
 			path = ProHeraldTests;
-			sourceTree = "<group>";
-		};
-		CD7EF41D24DD796B00D60FCB /* ProHeraldUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CD7EF41E24DD796B00D60FCB /* ProHeraldUITests.swift */,
-				CD7EF42024DD796B00D60FCB /* Info.plist */,
-			);
-			path = ProHeraldUITests;
 			sourceTree = "<group>";
 		};
 		CD7EF42C24DD7B8300D60FCB /* Screen */ = {
@@ -231,6 +205,55 @@
 			path = HeroDetail;
 			sourceTree = "<group>";
 		};
+		CD7EF45F24DED25B00D60FCB /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF46524DED2E800D60FCB /* MockedNetworkManager.swift */,
+				CD7EF46724DED2F900D60FCB /* MockedLocalStorageManager.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		CD7EF46024DED29A00D60FCB /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF46224DED2A700D60FCB /* HeroDetail */,
+				CD7EF46124DED2A200D60FCB /* Home */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		CD7EF46124DED2A200D60FCB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF45D24DED04E00D60FCB /* HomeScreenInteractorTest.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CD7EF46224DED2A700D60FCB /* HeroDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HeroDetail;
+			sourceTree = "<group>";
+		};
+		CD7EF46324DED2B600D60FCB /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				CD7EF46024DED29A00D60FCB /* Screen */,
+				CD7EF46424DED2D200D60FCB /* Worker */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		CD7EF46424DED2D200D60FCB /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		CF19118EBD7C16A03CE262E0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +307,7 @@
 				CD7EF40B24DD796B00D60FCB /* Sources */,
 				CD7EF40C24DD796B00D60FCB /* Frameworks */,
 				CD7EF40D24DD796B00D60FCB /* Resources */,
+				EDC9B6A8E18FA3FED99B579D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,26 +318,6 @@
 			productName = ProHeraldTests;
 			productReference = CD7EF40F24DD796B00D60FCB /* ProHeraldTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CD7EF41924DD796B00D60FCB /* ProHeraldUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD7EF42924DD796B00D60FCB /* Build configuration list for PBXNativeTarget "ProHeraldUITests" */;
-			buildPhases = (
-				0EB1CB8C332A6F0D471F9DB4 /* [CP] Check Pods Manifest.lock */,
-				CD7EF41624DD796B00D60FCB /* Sources */,
-				CD7EF41724DD796B00D60FCB /* Frameworks */,
-				CD7EF41824DD796B00D60FCB /* Resources */,
-				E8BB7DEDD6D497A6AD2733CF /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CD7EF41C24DD796B00D60FCB /* PBXTargetDependency */,
-			);
-			name = ProHeraldUITests;
-			productName = ProHeraldUITests;
-			productReference = CD7EF41A24DD796B00D60FCB /* ProHeraldUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -329,10 +333,6 @@
 						CreatedOnToolsVersion = 11.5;
 					};
 					CD7EF40E24DD796B00D60FCB = {
-						CreatedOnToolsVersion = 11.5;
-						TestTargetID = CD7EF3F824DD796A00D60FCB;
-					};
-					CD7EF41924DD796B00D60FCB = {
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = CD7EF3F824DD796A00D60FCB;
 					};
@@ -353,7 +353,6 @@
 			targets = (
 				CD7EF3F824DD796A00D60FCB /* ProHerald */,
 				CD7EF40E24DD796B00D60FCB /* ProHeraldTests */,
-				CD7EF41924DD796B00D60FCB /* ProHeraldUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -375,38 +374,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD7EF41824DD796B00D60FCB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EB1CB8C332A6F0D471F9DB4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ProHerald-ProHeraldUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		256CEF817FAA6448888FDD3D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,23 +421,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8BB7DEDD6D497A6AD2733CF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProHerald-ProHeraldUITests/Pods-ProHerald-ProHeraldUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProHerald-ProHeraldUITests/Pods-ProHerald-ProHeraldUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProHerald-ProHeraldUITests/Pods-ProHerald-ProHeraldUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EA39F3675CD51D7844AEEFE3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +436,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProHerald/Pods-ProHerald-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDC9B6A8E18FA3FED99B579D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProHeraldTests/Pods-ProHeraldTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProHeraldTests/Pods-ProHeraldTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProHeraldTests/Pods-ProHeraldTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -513,15 +483,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7EF41424DD796B00D60FCB /* ProHeraldTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD7EF41624DD796B00D60FCB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD7EF41F24DD796B00D60FCB /* ProHeraldUITests.swift in Sources */,
+				CD7EF45E24DED04E00D60FCB /* HomeScreenInteractorTest.swift in Sources */,
+				CD7EF46824DED2F900D60FCB /* MockedLocalStorageManager.swift in Sources */,
+				CD7EF46624DED2E800D60FCB /* MockedNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,11 +496,6 @@
 			isa = PBXTargetDependency;
 			target = CD7EF3F824DD796A00D60FCB /* ProHerald */;
 			targetProxy = CD7EF41024DD796B00D60FCB /* PBXContainerItemProxy */;
-		};
-		CD7EF41C24DD796B00D60FCB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD7EF3F824DD796A00D60FCB /* ProHerald */;
-			targetProxy = CD7EF41B24DD796B00D60FCB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -750,46 +709,6 @@
 			};
 			name = Release;
 		};
-		CD7EF42A24DD796B00D60FCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2FBA52D9BA5BCC80A2AEEFD /* Pods-ProHerald-ProHeraldUITests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H234B3HHZ5;
-				INFOPLIST_FILE = ProHeraldUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.proherald.ios.ProHeraldUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ProHerald;
-			};
-			name = Debug;
-		};
-		CD7EF42B24DD796B00D60FCB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5D0E7CC1293559FBF7E9C1E /* Pods-ProHerald-ProHeraldUITests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H234B3HHZ5;
-				INFOPLIST_FILE = ProHeraldUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.proherald.ios.ProHeraldUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ProHerald;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -816,15 +735,6 @@
 			buildConfigurations = (
 				CD7EF42724DD796B00D60FCB /* Debug */,
 				CD7EF42824DD796B00D60FCB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD7EF42924DD796B00D60FCB /* Build configuration list for PBXNativeTarget "ProHeraldUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD7EF42A24DD796B00D60FCB /* Debug */,
-				CD7EF42B24DD796B00D60FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

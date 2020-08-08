@@ -34,15 +34,18 @@ class HomeScreenInteractor: HomeScreenInteractorInterface {
         presenter?.onUpdateFilteredHeroes(filteredHeroes: filteredHeroes)
     }
     
-    private func fetchFromLocalStorage() {
+    func fetchFromLocalStorage() {
         let heroes: [HeroDetailObject] = LocalStorageManager.shared.getHeroes()
+        
+        guard !heroes.isEmpty else { return }
+        
         let roles: [String] = getAllHeroRoles(from: heroes)
         
         presenter?.onUpdateHeroes(heroes: heroes)
         presenter?.onUpdateRoles(roles: roles)
     }
     
-    private func fetchFromServer() {
+    func fetchFromServer() {
         guard NetworkManager.shared.isConnectedToInternet() else {
             presenter?.onGetError(with: "No internet connections")
             return

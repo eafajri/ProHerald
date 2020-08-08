@@ -3,34 +3,56 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - Fakery (3.4.0)
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
+  - Mockit (1.5.0)
+  - Nimble (8.0.9)
   - ObjectMapper (3.5.3)
   - PINCache (2.3)
+  - Quick (2.1.0)
+  - SpecLeaks (0.1.8):
+    - Nimble
+    - Quick
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (~> 5.2)
+  - Fakery (~> 3.4.0)
   - Kingfisher
+  - Mockit (~> 1.5.0)
+  - Nimble (~> 8.0.1)
   - ObjectMapper (~> 3.5)
   - PINCache
+  - Quick (~> 2.1.0)
+  - SpecLeaks (~> 0.1.8)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireObjectMapper
+    - Fakery
     - Kingfisher
+    - Mockit
+    - Nimble
     - ObjectMapper
     - PINCache
+    - Quick
+    - SpecLeaks
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  Fakery: 885e894a3e7c392e1da96c6e46a1abe5a0b28686
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  Mockit: 09492d654a2945096603d76ea77b131bdcfb2233
+  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  SpecLeaks: 0fa048f06b1adb36d8d3e86e039b5f67bf74bb06
 
-PODFILE CHECKSUM: baa2777178778c964fbc411fe124c118ec1f3e41
+PODFILE CHECKSUM: d42e766acd4333130cf44b9f56489e9e4e66bddb
 
 COCOAPODS: 1.8.4
