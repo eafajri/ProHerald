@@ -16,6 +16,11 @@ protocol HomeScreenVCInterface: class {
 }
 
 class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
+    enum ViewIdentifier: String {
+        case rolesTableView
+        case heroesCollectionView
+    }
+    
     private enum Constant {
         static let title: String = "ProHerald - Dota2 Heroes"
         
@@ -37,10 +42,19 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         var selectedRolesIndex: Set = Set<String>()
     }
     
-    private var screenState = State()
+    var screenState = State()
     
     private var interactor: HomeScreenInteractorInterface?
-    private var router: HomeScreenRouter?
+    private var router: HomeScreenRouterInterface?
+    
+    #if DEBUG
+    func injectService(interactor: HomeScreenInteractorInterface, router: HomeScreenRouterInterface) {
+        guard NSClassFromString("XCTest") != nil else { return }
+        
+        self.interactor = interactor
+        self.router = router
+    }
+    #endif
     
     private var numberOfCulomn: Int = 1
     
@@ -56,6 +70,8 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.accessibilityIdentifier = ViewIdentifier.rolesTableView.rawValue
         
         return tableView
     }()
@@ -75,6 +91,8 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         refresher.addTarget(self, action: #selector(onPullToRefresh), for: .valueChanged)
         
         collectionView.refreshControl = refresher
+        
+        collectionView.accessibilityIdentifier = ViewIdentifier.heroesCollectionView.rawValue
         
         return collectionView
     }()
@@ -101,10 +119,6 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         interactor?.fetchAllHeroes()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
@@ -129,6 +143,8 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
         
         view.addSubview(rolesTableView)
         view.addSubview(heroesCollectionView)
+        
+        rolesTableView.accessibilityLabel = ""
         
         NSLayoutConstraint.activate([
             rolesTableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -208,7 +224,6 @@ class HomeScreenVC: BaseViewController, HomeScreenVCInterface {
     }
     
     func onTapHeroCard(selectedHero: HeroDetailObject) {
-        showErrorMessage(with: "wkwkw")
         router?.routeToHeroDetailScreen(selectedHero: selectedHero, allHeroes: screenState.allHeroes)
     }
 }

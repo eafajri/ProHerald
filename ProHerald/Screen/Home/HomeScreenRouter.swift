@@ -13,7 +13,7 @@ protocol HomeScreenRouterInterface {
 }
 
 class HomeScreenRouter: HomeScreenRouterInterface {
-    weak var viewController: HomeScreenVC?
+    var viewController: HomeScreenVC?
     
     func routeToHeroDetailScreen(selectedHero: HeroDetailObject, allHeroes: [HeroDetailObject]) {
         

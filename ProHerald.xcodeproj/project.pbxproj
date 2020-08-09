@@ -29,6 +29,10 @@
 		CD7EF46624DED2E800D60FCB /* MockedNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF46524DED2E800D60FCB /* MockedNetworkManager.swift */; };
 		CD7EF46824DED2F900D60FCB /* MockedLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF46724DED2F900D60FCB /* MockedLocalStorageManager.swift */; };
 		CD7EF46E24DEEF7300D60FCB /* MockedHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF46D24DEEF7300D60FCB /* MockedHomeScreen.swift */; };
+		CD7EF47024DF148A00D60FCB /* HomeScreenRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF46F24DF148A00D60FCB /* HomeScreenRouterTest.swift */; };
+		CD7EF47224DF1D3800D60FCB /* MockedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF47124DF1D3800D60FCB /* MockedNavigationController.swift */; };
+		CD7EF47424DFD87000D60FCB /* HomeScreenPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF47324DFD87000D60FCB /* HomeScreenPresenterTest.swift */; };
+		CD7EF47624DFDB3900D60FCB /* HomeScreenVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EF47524DFDB3900D60FCB /* HomeScreenVCTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		CD7EF46524DED2E800D60FCB /* MockedNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkManager.swift; sourceTree = "<group>"; };
 		CD7EF46724DED2F900D60FCB /* MockedLocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedLocalStorageManager.swift; sourceTree = "<group>"; };
 		CD7EF46D24DEEF7300D60FCB /* MockedHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedHomeScreen.swift; sourceTree = "<group>"; };
+		CD7EF46F24DF148A00D60FCB /* HomeScreenRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenRouterTest.swift; sourceTree = "<group>"; };
+		CD7EF47124DF1D3800D60FCB /* MockedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNavigationController.swift; sourceTree = "<group>"; };
+		CD7EF47324DFD87000D60FCB /* HomeScreenPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenPresenterTest.swift; sourceTree = "<group>"; };
+		CD7EF47524DFDB3900D60FCB /* HomeScreenVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVCTest.swift; sourceTree = "<group>"; };
 		D220FE3EDB6A94E534CFAC15 /* Pods_ProHerald.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHerald.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E308440632E0CF79BB2B9051 /* Pods_ProHeraldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProHeraldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED64F8F43A8F0CDEAB79C966 /* Pods-ProHerald.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProHerald.release.xcconfig"; path = "Target Support Files/Pods-ProHerald/Pods-ProHerald.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 				CD7EF46524DED2E800D60FCB /* MockedNetworkManager.swift */,
 				CD7EF46724DED2F900D60FCB /* MockedLocalStorageManager.swift */,
 				CD7EF46D24DEEF7300D60FCB /* MockedHomeScreen.swift */,
+				CD7EF47124DF1D3800D60FCB /* MockedNavigationController.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -230,6 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				CD7EF45D24DED04E00D60FCB /* HomeScreenInteractorTest.swift */,
+				CD7EF47324DFD87000D60FCB /* HomeScreenPresenterTest.swift */,
+				CD7EF46F24DF148A00D60FCB /* HomeScreenRouterTest.swift */,
+				CD7EF47524DFDB3900D60FCB /* HomeScreenVCTest.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -478,10 +490,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7EF47224DF1D3800D60FCB /* MockedNavigationController.swift in Sources */,
 				CD7EF45E24DED04E00D60FCB /* HomeScreenInteractorTest.swift in Sources */,
 				CD7EF46E24DEEF7300D60FCB /* MockedHomeScreen.swift in Sources */,
+				CD7EF47624DFDB3900D60FCB /* HomeScreenVCTest.swift in Sources */,
 				CD7EF46824DED2F900D60FCB /* MockedLocalStorageManager.swift in Sources */,
 				CD7EF46624DED2E800D60FCB /* MockedNetworkManager.swift in Sources */,
+				CD7EF47024DF148A00D60FCB /* HomeScreenRouterTest.swift in Sources */,
+				CD7EF47424DFD87000D60FCB /* HomeScreenPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

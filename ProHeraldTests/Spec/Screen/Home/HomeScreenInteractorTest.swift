@@ -43,7 +43,10 @@ class HomeScreenInteractorTest: QuickSpec {
                 }
                 
                 it("should trigger presenter for updating when data is not empty") {
-                    mockedLocalStorageManager.mockedHeroes = [mockedHero]
+                    _ = mockedLocalStorageManager.when().call(
+                        withReturnValue: mockedLocalStorageManager.getHeroes(),
+                        andArgumentMatching: []
+                    ).thenReturn([mockedHero])
                     
                     interactor.fetchAllHeroes()
                     
@@ -52,7 +55,10 @@ class HomeScreenInteractorTest: QuickSpec {
                 }
                 
                 it("should not trigger presenter for updating when data is empty") {
-                    mockedLocalStorageManager.mockedHeroes = []
+                    _ = mockedLocalStorageManager.when().call(
+                        withReturnValue: mockedLocalStorageManager.getHeroes(),
+                        andArgumentMatching: []
+                    ).thenReturn([])
                     
                     interactor.fetchAllHeroes()
                     

@@ -32,7 +32,7 @@ class HeroDetailScreenVC: BaseViewController, HeroDetailScreenVCInterface {
     
     var screenState = State()
     
-    private var interactor: HeroDetailScreenInteractor?
+    private var interactor: HeroDetailScreenInteractorInterface?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame)
